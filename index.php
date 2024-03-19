@@ -1,5 +1,16 @@
 <?php
-include 'data.php';
+
+// Connexion
+
+include_once 'includes/dbconnect.inc.php';
+
+// Vérifier la connexion
+
+if (!$connexion) {
+      die("Échec de la connexion : " . mysqli_connect_error());
+} else {
+      echo "Connexion réussie à la base de données.";
+}
 
 ?>
 
@@ -15,14 +26,14 @@ include 'data.php';
 </head>
 
 <body>
-      <form action="data.php" method="post">
+      <h1>Je suis un titre très très important ohlalala</h1>
+      <form action="includes/dbconnect.inc.php" method="post">
             <div>
-                  <label for="username">Votre nom d'utilisateur </label><input type="text" name="username" id="username" placeholder="ici... !">
+                  <label for="username">Votre nom d'utilisateur </label>
+                  <input type="text" name="username" id="username" placeholder="ici... !">
             </div>
             <div>
                   <label for="commentaire">Ecrivez à la lune</label>
-            </div>
-            <div>
                   <textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Entrez ici votre commentaire... !"></textarea>
             </div>
             <div>
@@ -30,6 +41,9 @@ include 'data.php';
                   <input type="reset">
             </div>
       </form>
+
+
+
 </body>
 
 </html>
