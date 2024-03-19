@@ -1,30 +1,52 @@
 <?php
 
-$servername = 'localhost';
+// Paramètres de connexion
+
+$serverName = 'localhost';
 $username = 'root';
 $password = '';
 $dataBase = 'bdd-commentaires';
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dataBase);
+// Établir la connexion
 
-// Check connection
-if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
+$connexion = mysqli_connect(
+      $serverName,
+      $username,
+      $password,
+      $dataBase
+);
+
+// Vérifier la connexion
+
+if (!$connexion) {
+      die("Échec de la connexion : " . mysqli_connect_error());
 } else {
-      echo 'Connexion réussie à la base de données.';
+      echo "Connexion réussie à la base de données.";
 }
 
 // Executer une requête
-$sql = "SELECT * FROM commentaires";
-$resultat = mysqli_query($conn, $sql);
 
-if($resultat) {
-      print_r($resultat);
+$sql = "SELECT * FROM commentaires";
+$resultat = mysqli_query($connexion, $sql);
+$resultatCheck = mysqli_num_rows($resultat);
+
+// Afficher une requête
+
+if ($resultatCheck > 0) {
+      while ($row = mysqli_fetch_assoc($resultat))
+      {
+            $time = strtotime($row['dateCommentaire']);
+            $date = date('l d F Y à H:i', $time);
+            echo '<div>' . $row['username'] . ' a écrit (le ' . $date . ') : <p>' . $row['commentaire'] . '</p></div>';
+}
 } else {
-      echo "Erreur : " . mysqli_error($conn);
+      echo "Erreur : " . mysqli_error($connexion);
 }
 
-mysqli_close($conn);
+// Lier les données à enregistrer
 
-?>
+// Ajouter les données dans la DB
+
+// Fermeture de la connexion
+
+mysqli_close($connexion);

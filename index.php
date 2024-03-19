@@ -15,12 +15,20 @@ include 'data.php';
 </head>
 
 <body>
-      <form action="" method="post">
-            <div><label for="username">Votre nom d'utilisateur </label><input type="text" name="username" id="username" placeholder="ici... !"></div>
-            <div><label for="commentaire">Ecrivez à la lune</label></div>
-            <div><textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Entrez ici votre commentaire... !"></textarea></div>
-            <div><input type="submit"></div>
-            <div><input type="reset"></div>
+      <form action="data.php" method="post">
+            <div>
+                  <label for="username">Votre nom d'utilisateur </label><input type="text" name="username" id="username" placeholder="ici... !">
+            </div>
+            <div>
+                  <label for="commentaire">Ecrivez à la lune</label>
+            </div>
+            <div>
+                  <textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Entrez ici votre commentaire... !"></textarea>
+            </div>
+            <div>
+                  <input type="submit">
+                  <input type="reset">
+            </div>
       </form>
 </body>
 
