@@ -26,9 +26,6 @@ Un commentaire sera constitué de :
 - Configuration de l'environnement de développement : vérifier configuration, mise en place de l'arborescence, du fichier readme.md et du dépôt Git.
 - Création de la BDD MySQL ainsi que les tables et les champs
 - Création des pages PHP front-end
-
-### ON EST LA
-
 - Création des pages PHP back-end
 - Tests et recette : voir si les fonctionnalités prévues initialement sont présentes, faire des tests pour repérer les possibles bugs, optimisation du code, prise en compte de la sécurité.
 - Mise en ligne (si possible)

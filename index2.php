@@ -26,10 +26,21 @@ if (!$connexion) {
 </head>
 
 <body>
+      <!-- Récupérer le choix de l'user pour afficher ou écrire un commentaire -->
+
+      <form action="" method="post">
+            <input type="radio" name="" id="">            
+            <input type="submit">
+
+      </form>
+      
+      <!-- Ecrire un commentaire -->
+
+      <?php echo'
       <h1>Je suis un titre très très important ohlalala</h1>
       <form action="includes/comment.inc.php" method="post">
             <div>
-                  <label for="username">Votre nom d'utilisateur </label>
+                  <label for="username">Votre nom d\'utilisateur </label>
                   <input type="text" name="username" id="username" placeholder="ici... !">
             </div>
             <div>
@@ -40,7 +51,8 @@ if (!$connexion) {
                   <input type="submit">
                   <input type="reset">
             </div>
-      </form>
+      </form>'
+      ?>
 
 
 
