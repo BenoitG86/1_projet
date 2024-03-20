@@ -10,17 +10,17 @@ $readCommentCheck = mysqli_num_rows($readComment);
 
 // Afficher une requête
 
-if ($readCommentCheck > 0) {
-      while ($row = mysqli_fetch_assoc($readComment)) {
-            $time = strtotime($row['dateCommentaire']);
-            $date = date('l d F Y à H:i', $time);
-            echo '<div>' . $row['username'] . ' a écrit (le ' . $date . ') : <p>' . $row['commentaire'] . '</p></div>';
+      if ($readCommentCheck > 0) {
+            while ($row = mysqli_fetch_assoc($readComment)) {
+                  $time = strtotime($row['dateCommentaire']);
+                  $date = date('l d F Y à H:i', $time);
+                  echo '<div>' . $row['username'] . ' a écrit (le ' . $date . ') : <p>' . $row['commentaire'] . '</p></div>';
+            }
+      } else {
+            echo "Erreur : " . mysqli_error($connexion);
       }
-} else {
-      echo "Erreur : " . mysqli_error($connexion);
-}
 
-header("Location: ../index.php?read=success");
+// header("Location: ../index.php?read=success");
 
 // Fermer la connexion
 
