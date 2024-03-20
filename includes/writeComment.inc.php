@@ -16,3 +16,7 @@ $commentSQL = "INSERT INTO `commentaires` ( `username`, `commentaire`, `dateComm
 mysqli_query($connexion, $commentSQL);
 
 header("Location: ../index.php?comment=success");
+
+// Fermer la connexion
+
+mysqli_close($connexion);

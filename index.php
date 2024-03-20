@@ -26,24 +26,29 @@ if (!$connexion) {
 </head>
 
 <body>
-      <h1>Je suis un titre très très important ohlalala</h1>
-      <form action="includes/comment.inc.php" method="post">
-            <div>
-                  <label for="username">Votre nom d'utilisateur </label>
-                  <input type="text" name="username" id="username" placeholder="ici... !">
-            </div>
-            <div>
-                  <label for="commentaire">Ecrivez à la lune</label>
-                  <textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Entrez ici votre commentaire... !"></textarea>
-            </div>
-            <div>
-                  <input type="submit">
-                  <input type="reset">
-            </div>
-      </form>
 
-
-
+      <div class="earth">
+            <h1>Je suis un titre très très important ohlalala</h1>
+            <form action="includes/writeComment.inc.php" method="post">
+                  <div>
+                        <label for="username">Votre nom d'utilisateur </label>
+                        <input type="text" name="username" id="username" placeholder="ici... !">
+                  </div>
+                  <div>
+                        <label for="commentaire">Ecrivez à la lune</label>
+                        <textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Entrez ici votre commentaire... !"></textarea>
+                  </div>
+                  <div>
+                        <input type="submit">
+                        <input type="reset">
+                  </div>
+            </form>
+      </div>
+      <div class="moon">
+            <form action="includes/showComment.inc.php" method="post">
+                  <label for="submit">Afficher les commentaires <input id="submit" type="submit"></label>
+            </form>
+      </div>
 </body>
 
 </html>
