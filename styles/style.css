@@ -1,0 +1,60 @@
+*, *::before, *::after {
+      box-sizing: border-box;
+      /* outline : 1px solid red; */
+}
+
+:root {
+      /* Déterminer des couleurs, oopa */
+      /* --primary-color: hsl(322, 100%, 66%);
+      --primary-color-h: hsl(322, 86%, 78%);
+      --neutral-color1: hsl(193, 100%, 96%);
+      --neutral-color2: hsl(192, 100%, 9%);
+      --neutral-color3: hsl(208, 11%, 55%); */
+      --primary-font1: "Dr Sugiyama";
+      --primary-font2: "Carrois Gothic SC", sans-serif;
+      --padding-space: 20px;
+      --text-medium: 16px;
+}
+
+body {
+      width: 100%;
+      font-family: var(--primary-font2);
+}
+
+main {
+      background-color: #ffffff;
+      /* background-image: url("../img/background.jpg"); */
+      /* color: white; */
+      padding: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+}
+
+.earth {
+      background-color: aliceblue;
+}
+
+.moon {
+      background-color: beige;
+      width: 50%;
+}
+
+p {
+      word-wrap: normal;
+}
+
+.info {
+      text-decoration: wavy 2px black;
+      font-weight: 500;
+      font-family: var(--primary-font1);
+}
+
+footer {
+      background-color: gray;
+
+}
+
+.iconFooter {
+      height : 40px;
+}
