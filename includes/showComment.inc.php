@@ -22,6 +22,9 @@ $readCommentCheck = mysqli_num_rows($readComment);
 if ($readCommentCheck > 0) {
       while ($row = mysqli_fetch_assoc($readComment)) {
             $time = strtotime($row['dateCommentaire']);
+            
+            // Passage de la date en français - bis
+
             $date =  str_replace(
                   ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                   ["Lundi", "Mardi", "Mercredi", "Jeudi", "Jeudi", "Samedi", "Dimanche", "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"],
