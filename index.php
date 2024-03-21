@@ -23,9 +23,9 @@ if (!$connexion) {
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=0, initial-scale=1.0">
+      <link rel="stylesheet" href="styles/reset.css">
       <link rel="stylesheet" href="styles/style.css">
       <link rel="shortcut icon" href="icons/logo-wechat.svg" type="image/x-icon">
-      <!-- <link rel="stylesheet" href="styles/reset.css"> -->
       <title>Lunar chatboard</title>
 
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,47 +36,52 @@ if (!$connexion) {
 <body>
       <main>
             <h1>Lunar chatboard</h1>
-            <div class="earth">
-                  <form action="includes/writeComment.inc.php" method="post">
-                        <div>
-                              <label for="username">Votre nom d'utilisateur </label>
-                              <input type="text" name="username" id="username" placeholder="ici... !">
-                        </div>
-                        <div>
-                              <label for="commentaire">Ecrivez à la lune</label>
-                              <textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Entrez ici votre commentaire... !"></textarea>
-                        </div>
-                        <div>
-                              <input type="submit">
-                              <input type="reset">
-                        </div>
-                  </form>
-            </div>
-            <div class="moon">
+            <section class="planets">
+                  <section class="earth">
+                        <h2 class="hidden">La Terre</h2>
+                        <form action="includes/writeComment.inc.php" method="post">
+                              <div class="user">
+                                    <label for="username">Votre nom d'utilisateur </label>
+                                    <input type="text" name="username" id="username" placeholder="ici... !">
+                              </div>
 
-                  <?php if ($readCommentCheck > 0) {
-                        while ($row = mysqli_fetch_assoc($readComment)) {
-                              $time = strtotime($row['dateCommentaire']);
-
-                              // Passage de la date en français - bis
-
-                              $date =  str_replace(
-                                    ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-                                    ["Lundi", "Mardi", "Mercredi", "Jeudi", "Jeudi", "Samedi", "Dimanche", "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"],
-                                    date('l d F Y à H:i', $time)
-                              );
-                              echo '<div class="comment"><div class="info">' . $row['username'] . ' a écrit [le ' . $date . '] : </div><p>' . $row['commentaire'] . '</p></div>';
+                              <div class="commentaire">
+                                    <label for="commentaire">Ecrivez à la lune</label>
+                                    <textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Entrez ici votre commentaire... !"></textarea>
+                              </div>
+                              
+                              <div>
+                                    <input type="submit">
+                                    <input type="reset">
+                              </div>
+                        </form>
+                  </section>
+                  <section class="moon">
+                        <h2 class="hidden">La Lune</h2>
+                        <?php if ($readCommentCheck > 0) {
+                              while ($row = mysqli_fetch_assoc($readComment)) {
+                                    $time = strtotime($row['dateCommentaire']);
+                                    // Passage de la date en français - bis
+                                    $date =  str_replace(
+                                          ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                                          ["Lundi", "Mardi", "Mercredi", "Jeudi", "Jeudi", "Samedi", "Dimanche", "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"],
+                                          date('l d F Y à H:i', $time)
+                                    );
+                                    echo '<div class="comment"><div class="info">' . $row['username'] . ' a écrit [le ' . $date . '] : </div><p>' . $row['commentaire'] . '</p></div>';
+                              }
+                        } else {
+                              echo "Erreur : " . mysqli_error($connexion);
                         }
-                  } else {
-                        echo "Erreur : " . mysqli_error($connexion);
-                  }
-                  ?>
-
-            </div>
+                        ?>
+                  </section>
+            </section>
       </main>
       <footer>
-            <p>Je suis une petite note de bas de page.</p>
+            <span class="thank">Merci d'avoir visité ce site.</span>
+            <q>"J'aimerai des crèpes au goûter" Timéo, 8 ans</q>
             <a href="https://github.com/BenoitG86/1_projet"><img src="icons/logo-github.svg" alt="" class="iconFooter"> Retrouvez-ici le GitHub de ce projet</a>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valide !" /></a>
+
       </footer>
 </body>
 

@@ -1,60 +1,135 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
       box-sizing: border-box;
       /* outline : 1px solid red; */
 }
 
 :root {
       /* Déterminer des couleurs, oopa */
-      /* --primary-color: hsl(322, 100%, 66%);
-      --primary-color-h: hsl(322, 86%, 78%);
-      --neutral-color1: hsl(193, 100%, 96%);
-      --neutral-color2: hsl(192, 100%, 9%);
-      --neutral-color3: hsl(208, 11%, 55%); */
+
       --primary-font1: "Dr Sugiyama";
-      --primary-font2: "Carrois Gothic SC", sans-serif;
+      --primary-font2: "Carrois Gothic SC";
       --padding-space: 20px;
       --text-medium: 16px;
+      --text-large: 24px;
+      --text-title: 32px;
 }
 
+/*  -------------------------- */
+/*  Caractéristiques générales */
+/*  -------------------------- */
+
 body {
+      min-height: 100vh;
       width: 100%;
       font-family: var(--primary-font2);
+      display: flex;
+      flex-direction: column;
 }
+
+
+/*  ------------------------------------ */
+/* Caractéristiques du contenu principal */
+/*  ------------------------------------ */
 
 main {
       background-color: #ffffff;
       /* background-image: url("../img/background.jpg"); */
       /* color: white; */
       padding: 100px;
+
+}
+
+h1 {
+      padding: var(--padding-space);
+      font-weight: bold;
+      font-size: var(--text-title);
+      text-shadow: #555555;
+}
+
+.hidden {
+      visibility: collapse;
+}
+
+/*  --------------------------------- */
+/*  Caractéristiques des planètes !!! */
+/*  --------------------------------- */
+
+.planets {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
 }
 
+
 .earth {
       background-color: aliceblue;
+      width: 50%;
+      padding: var(--padding-space);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
 }
 
 .moon {
       background-color: beige;
       width: 50%;
+      padding: var(--padding-space);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+}
+
+/* --------------------------------- */
+/* Caractéristiques des COMMENTAIRES */
+/* --------------------------------- */
+
+.info {
+      text-decoration: underline 2px black;
+      font-family: var(--primary-font1);
+      font-weight: 500;
+      font-size: 36px;
+
 }
 
 p {
-      word-wrap: normal;
+      line-height: 2em;
+      font-size: 24px;
 }
 
-.info {
-      text-decoration: wavy 2px black;
-      font-weight: 500;
-      font-family: var(--primary-font1);
-}
+
+/*  -------------------------- */
+/*  Caractéristiques du FOOTER */
+/*  -------------------------- */
 
 footer {
       background-color: gray;
+      height: 50px;
+      margin-top: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+}
+
+footer>a {
+      color: white;
+      text-decoration: none;
+      line-height: 1em;
+      padding: 2em;
 
 }
 
+footer>a:hover {
+      color: gold;
+      text-decoration: wavy;
+}
+
+footer>a:visited {
+      text-decoration: none;
+}
+
 .iconFooter {
-      height : 40px;
+      height: 40px;
 }
