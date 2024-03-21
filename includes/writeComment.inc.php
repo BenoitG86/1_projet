@@ -12,8 +12,8 @@ $commentaire = mysqli_real_escape_string($connexion, $_POST['commentaire']);
 
 $commentSQL = "INSERT INTO `commentaires` (`username`, `commentaire`) VALUES ('$username', '$commentaire');";
 
-// '$dateComment' pas ouf préférer à la place la fonction SQL NOW() !!!
-//  NOW() pas ouf préférer le CURRENT_TIMESTAMP dans les attributs de l'objet
+// '$dateComment' pas ouf, préférer à la place la fonction SQL NOW() !!!
+//  NOW() pas ouf, préférer le CURRENT_TIMESTAMP dans les attributs de l'objet
 
 mysqli_query($connexion, $commentSQL);
 
