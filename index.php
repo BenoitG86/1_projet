@@ -37,20 +37,21 @@ if (!$connexion) {
 <body>
       <main>
             <h1>Lunar chatboard</h1>
-            <section class="planets">
+            <section class="sectionPlanets">
                   <section class="earth">
                         <h2 class="hidden">La Terre</h2>
+                        <img src="img/earth.png" alt="La Terre" class="planet">
                         <form action="includes/writeComment.inc.php" method="post">
                               <div class="user">
                                     <label for="username">Votre nom d'utilisateur </label>
                                     <input type="text" name="username" id="username" placeholder="ici... !">
                               </div>
-
+                              
                               <div class="commentaire">
                                     <label class="labelComment" for="commentaire">Ecrivez à la lune</label><br>
                                     <textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Entrez ici votre commentaire... !"></textarea>
                               </div>
-
+                              
                               <div>
                                     <input type="submit">
                                     <input type="reset">
@@ -59,6 +60,7 @@ if (!$connexion) {
                   </section>
                   <section class="moon">
                         <h2 class="hidden">La Lune</h2>
+                        <img src="img/moon.png" alt="La lune" class="planet">
                         <?php if ($readCommentCheck > 0) {
                               while ($row = mysqli_fetch_assoc($readComment)) {
                                     $time = strtotime($row['dateCommentaire']);

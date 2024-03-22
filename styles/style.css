@@ -25,6 +25,7 @@ body {
       font-family: var(--primary-font2);
       display: flex;
       flex-direction: column;
+      flex: 1 1 auto;
 }
 
 
@@ -53,19 +54,20 @@ h1 {
 /*  Caractéristiques des planètes !!! */
 /*  --------------------------------- */
 
-.planets {
+.sectionPlanets {
       width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: center;
 }
 
+.planet {
+      width: 300px;
+}
 
 .earth {
       background-color: aliceblue;
-      background-image: url('../img/earth.png');
       width: 600px;
-      object-position: center;
       padding: var(--padding-space);
       display: flex;
       justify-content: center;
@@ -78,7 +80,6 @@ h1 {
 
 .moon {
       background-color: beige;
-      background-image: url('../img/moon.png');
       width: 900px;
       padding: var(--padding-space);
       display: flex;
@@ -117,8 +118,6 @@ footer {
       background-color: lightcoral;
       width: 100%;
       height: 50px;
-      position: absolute;
-      bottom: 0;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
