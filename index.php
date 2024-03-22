@@ -31,6 +31,7 @@ if (!$connexion) {
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Dr+Sugiyama&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -46,10 +47,10 @@ if (!$connexion) {
                               </div>
 
                               <div class="commentaire">
-                                    <label for="commentaire">Ecrivez à la lune</label>
+                                    <label class="labelComment" for="commentaire">Ecrivez à la lune</label><br>
                                     <textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Entrez ici votre commentaire... !"></textarea>
                               </div>
-                              
+
                               <div>
                                     <input type="submit">
                                     <input type="reset">
@@ -67,7 +68,7 @@ if (!$connexion) {
                                           ["Lundi", "Mardi", "Mercredi", "Jeudi", "Jeudi", "Samedi", "Dimanche", "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"],
                                           date('l d F Y à H:i', $time)
                                     );
-                                    echo '<div class="comment"><div class="info">' . $row['username'] . ' a écrit [le ' . $date . '] : </div><p>' . $row['commentaire'] . '</p></div>';
+                                    echo '<div class="comment"><div class="info">' . $row['username'] . ' a écrit [<span class="dateComment">le ' . $date . '</span>] : </div><p>' . $row['commentaire'] . '</p></div>';
                               }
                         } else {
                               echo "Erreur : " . mysqli_error($connexion);
@@ -79,9 +80,8 @@ if (!$connexion) {
       <footer>
             <span class="thank">Merci d'avoir visité ce site.</span>
             <q>"J'aimerai des crèpes au goûter" Timéo, 8 ans</q>
-            <a href="https://github.com/BenoitG86/1_projet"><img src="icons/logo-github.svg" alt="" class="iconFooter"> Retrouvez-ici le GitHub de ce projet</a>
-            <a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valide !" /></a>
-
+            <p class="linkGithub"><a href="https://github.com/BenoitG86/1_projet"><img src="icons/logo-github.svg" alt="" class="iconFooter"> Retrouvez-ici le GitHub de ce projet</a></p>
+            <p><a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valide !" /></a></p>
       </footer>
 </body>
 

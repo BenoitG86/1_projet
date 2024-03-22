@@ -6,9 +6,8 @@
 }
 
 :root {
-      /* Déterminer des couleurs, oopa */
 
-      --primary-font1: "Dr Sugiyama";
+      --primary-font1: "Fraunces";
       --primary-font2: "Carrois Gothic SC";
       --padding-space: 20px;
       --text-medium: 16px;
@@ -34,15 +33,13 @@ body {
 /*  ------------------------------------ */
 
 main {
-      background-color: #ffffff;
+      background-color: white;
       /* background-image: url("../img/background.jpg"); */
-      /* color: white; */
-      padding: 100px;
-
 }
 
 h1 {
       padding: var(--padding-space);
+      padding-left: 200px;
       font-weight: bold;
       font-size: var(--text-title);
       text-shadow: #555555;
@@ -57,6 +54,7 @@ h1 {
 /*  --------------------------------- */
 
 .planets {
+      width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -65,16 +63,23 @@ h1 {
 
 .earth {
       background-color: aliceblue;
-      width: 50%;
+      background-image: url('../img/earth.png');
+      width: 600px;
+      object-position: center;
       padding: var(--padding-space);
       display: flex;
       justify-content: center;
+      align-items: center;
       flex-direction: column;
+}
+.earth > form > * {
+      padding: var(--padding-space);
 }
 
 .moon {
       background-color: beige;
-      width: 50%;
+      background-image: url('../img/moon.png');
+      width: 900px;
       padding: var(--padding-space);
       display: flex;
       justify-content: center;
@@ -89,13 +94,18 @@ h1 {
       text-decoration: underline 2px black;
       font-family: var(--primary-font1);
       font-weight: 500;
-      font-size: 36px;
+      font-size: 24px;
 
 }
 
+.dateComment {
+      font-size: 18px;
+}
+
+
 p {
-      line-height: 2em;
-      font-size: 24px;
+      line-height: 1.5em;
+      font-size: 16px;
 }
 
 
@@ -104,30 +114,31 @@ p {
 /*  -------------------------- */
 
 footer {
-      background-color: gray;
+      background-color: lightcoral;
+      width: 100%;
       height: 50px;
-      margin-top: auto;
+      position: absolute;
+      bottom: 0;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
 }
 
-footer>a {
+a {
       color: white;
       text-decoration: none;
-      line-height: 1em;
-      padding: 2em;
-
 }
 
-footer>a:hover {
+a:hover {
       color: gold;
       text-decoration: wavy;
 }
 
-footer>a:visited {
-      text-decoration: none;
+.linkGithub {
+      display: flex;
+      justify-content: center;
+      align-self: center;
 }
 
 .iconFooter {
