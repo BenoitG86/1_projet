@@ -2,17 +2,18 @@
 
 Site internet intégrant des commentaires.
 
-## Fonctionnalités
+## Fonctionnalités souhaitées
 
 ### Front-end
 
-- Main : Fond d'écran réactif
-- Commentaires : cliquer sur la lune pour ouvrir la fenetre d'envoi et de récup' de commentaires
-- Audio : intégrer une bande son de fond
+- Main : Fond d'écran réactif ( V3 )
+- Commentaires : cliquer sur la lune pour ouvrir la fenetre d'envoi et de récup' de commentaires ( V2 )
+- Audio : intégrer une bande son de fond ( V2 )
 
 ### Back-end
 
-- BDD : stockage des commentaires
+- BDD : stockage des commentaires ( OK )
+- BDD : stockage des informations utilisateurs [IP, navigateur, etc] ( V2 )
 
 ## Structure des données
 
